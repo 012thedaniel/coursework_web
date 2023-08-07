@@ -1,0 +1,547 @@
+@font-face {
+  font-family: Polonium-Bold;
+  src: url("Polonium-Bold.otf");
+}
+
+body {
+  margin: 0;
+}
+
+h2 {
+  font-family: Polonium-Bold, sans-serif;
+  font-size: 30px;
+  color: black;
+  margin: 0;
+  hyphens: auto;
+}
+
+.text {
+  font-family: "Helvetica Neue", sans-serif;
+  font-size: 24px;
+  text-align: justify;
+  margin: 0;
+  hyphens: auto;
+}
+.text_part {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.additional_info {
+  font-style: italic;
+}
+.additional_info:before {
+  content: "* ";
+}
+
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  h1 {
+    font-family: Polonium-Bold, sans-serif;
+    font-size: 60px;
+    text-transform: uppercase;
+    color: #4D5D53;
+    margin: 0;
+    br {
+      display: none;
+    }
+  }
+  img {
+    width: 600px;
+  }
+}
+
+main {
+  margin: 150px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 150px;
+  #history {
+    margin: 0 60px;
+    display: flex;
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+    #history_title_block {
+      width: 50%;
+      aspect-ratio: 1;
+      background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("../style/history.jpg");
+      background-position: right top;
+      display: flex;
+      flex-shrink: 0;
+      align-items: center;
+      justify-content: center;
+      #history_title {
+        color: white;
+        text-align: center;
+      }
+    }
+    #history_text_block {
+      display: flex;
+      flex-direction: column;
+      .text_part {
+        margin-right: 60px;
+      }
+      .history_text_block_outline {
+        flex: 1;
+        min-height: 80px;
+        width: 100%;
+        border-left: 4px solid black;
+      }
+      .history_text_block_outline_top {
+        margin-bottom: 25px;
+        border-top: 4px solid black;
+      }
+      .history_text_block_outline_bottom {
+        margin-top: 25px;
+        border-bottom: 4px solid black;
+      }
+    }
+  }
+  #map {
+    margin: 0 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    h2 {
+      width: 100%;
+      text-align: center;
+      padding: 10px 0;
+      border: 4px solid black;
+      box-sizing: border-box;
+      box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+      br {
+        display: none;
+      }
+    }
+    #map_content {
+      display: flex;
+      gap: 30px;
+      #map_pic {
+        width: 50%;
+        background-image: url("../style/map.jpg");
+        background-size: cover;
+        background-position: right top;
+        box-sizing: border-box;
+        border: 4px solid black;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+      }
+      #map_text_block {
+        width: 50%;
+        border: 4px solid black;
+        box-sizing: border-box;
+        box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.25);
+        .text_part {
+          margin: 60px 45px;
+        }
+      }
+    }
+  }
+  #each_dormitory {
+    margin: 0 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 45px;
+    #each_dormitory_content {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      #list_of_info_about_each_dormitory {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        .unit_in_list_of_info_about_each_dormitory {
+          display: flex;
+          gap: 25px;
+          align-items: center;
+          p {
+            font-style: italic;
+            font-weight: 500;
+          }
+          svg {
+            height: 25px;
+            width: 25px;
+            flex-shrink: 0;
+            path {
+              fill: #4D5D53;
+            }
+          }
+        }
+      }
+    }
+  }
+  #war {
+    border-left: 4px solid #660000;
+  }
+  .title_and_text_block {
+    margin: 0 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding-left: 45px;
+    border-left: 4px solid black;
+    #list_of_info_to_check_in {
+      padding-left: 19px;
+      margin: 0;
+      li {
+        margin-bottom: 5px;
+      }
+    }
+  }
+}
+
+footer {
+  width: 100vw;
+  height: 25px;
+  background-color: #0000B8;
+  border-bottom: 25px solid #FFD800;
+}
+
+@media (max-width: 1000px) {
+  main {
+    #history {
+      flex-direction: column-reverse;
+      #history_title_block {
+        width: 100%;
+        aspect-ratio: 4/3;
+      }
+      #history_text_block {
+        .history_text_block_outline {
+          display: none;
+        }
+        .text_part {
+          padding: 60px 45px;
+          border-right: 4px solid black;
+          border-left: 4px solid black;
+          border-bottom: 4px solid black;
+          margin-right: unset;
+        }
+      }
+    }
+    #map #map_content {
+      flex-direction: column;
+      #map_pic {
+        width: 100%;
+        aspect-ratio: 4/3;
+      }
+      #map_text_block {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 850px) {
+  header {
+    h1 {
+      font-size: 55px;
+    }
+    img {
+      width: 550px;
+    }
+  }
+  main {
+    margin: 145px 0;
+    gap: 145px;
+    #history {
+      margin: 0 55px;
+      #history_text_block .text_part {
+        padding: 55px 41.25px;
+      }
+    }
+    #map {
+      margin: 0 55px;
+      #map_content #map_text_block .text_part {
+        margin: 55px 41.25px;
+      }
+    }
+    #each_dormitory {
+      margin: 0 55px;
+      #each_dormitory_content #list_of_info_about_each_dormitory .unit_in_list_of_info_about_each_dormitory {
+        gap: 24px;
+      }
+    }
+    .title_and_text_block {
+      margin: 0 55px;
+      padding-left: 41.25px;
+      #list_of_info_to_check_in {
+        padding-left: 18px;
+      }
+    }
+  }
+  h2 {
+    font-size: 29px;
+  }
+  .text {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 750px) {
+  header {
+    h1 {
+      font-size: 50px;
+    }
+    img {
+      width: 500px;
+    }
+  }
+  main {
+    margin: 140px 0;
+    gap: 140px;
+    #history {
+      margin: 0 50px;
+      #history_text_block .text_part {
+        padding: 50px 37.5px;
+      }
+    }
+    #map {
+      margin: 0 50px;
+      #map_content #map_text_block .text_part {
+        margin: 50px 37.5px;
+      }
+    }
+    #each_dormitory {
+      margin: 0 50px;
+      #each_dormitory_content #list_of_info_about_each_dormitory .unit_in_list_of_info_about_each_dormitory {
+        gap: 23px;
+      }
+    }
+    .title_and_text_block {
+      margin: 0 50px;
+      padding-left: 37.5px;
+    }
+  }
+  h2 {
+    font-size: 28px;
+  }
+  .text {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 650px) {
+  header {
+    h1 {
+      font-size: 45px;
+    }
+    img {
+      width: 450px;
+    }
+  }
+  main {
+    margin: 135px 0;
+    gap: 135px;
+    #history {
+      margin: 0 45px;
+      #history_text_block .text_part {
+        padding: 45px 33.75px;
+        border-bottom: 3px solid black;
+        border-left: 3px solid black;
+        border-right: 3px solid black;
+      }
+    }
+    #map {
+      margin: 0 45px;
+      h2 {
+        border: 3px solid black;
+        br {
+          display: unset;
+        }
+      }
+      #map_content {
+        #map_pic {
+          border: 3px solid black;
+        }
+        #map_text_block {
+          border: 3px solid black;
+          .text_part {
+            margin: 45px 33.75px;
+          }
+        }
+      }
+    }
+    #each_dormitory {
+      margin: 0 45px;
+      #each_dormitory_content #list_of_info_about_each_dormitory .unit_in_list_of_info_about_each_dormitory {
+        gap: 22px;
+      }
+    }
+    .title_and_text_block {
+      margin: 0 45px;
+      padding-left: 33.75px;
+      border-left: 3px solid black;
+      #list_of_info_to_check_in {
+        padding-left: 17px;
+      }
+    }
+  }
+  h2 {
+    font-size: 27px;
+  }
+  .text {
+    font-size: 21px;
+  }
+}
+
+@media (max-width: 550px) {
+  header {
+    h1 {
+      font-size: 40px;
+    }
+    img {
+      width: 400px;
+    }
+  }
+  main {
+    margin: 130px 0;
+    gap: 130px;
+    #history {
+      margin: 0;
+      box-shadow: unset;
+      #history_text_block .text_part {
+        border: unset;
+        padding: 40px 40px 0 40px;
+      }
+    }
+    #map {
+      margin: 0;
+      h2 {
+        border-right: unset;
+        border-left: unset;
+      }
+      #map_content {
+        #map_pic {
+          border-right: unset;
+          border-left: unset;
+        }
+        #map_text_block {
+          border-right: unset;
+          border-left: unset;
+          .text_part {
+            margin: 40px;
+          }
+        }
+      }
+    }
+    #each_dormitory {
+      margin: 0 40px;
+      #each_dormitory_content #list_of_info_about_each_dormitory .unit_in_list_of_info_about_each_dormitory {
+        gap: 21px;
+      }
+    }
+    .title_and_text_block {
+      margin: 0 40px;
+      padding-left: 30px;
+    }
+  }
+  h2 {
+    font-size: 26px;
+  }
+  .text {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 500px) {
+  header {
+    gap: 20px;
+    h1 br {
+      display: unset;
+    }
+    img {
+      width: 350px;
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  header {
+    h1 {
+      font-size: 35px;
+    }
+    img {
+      width: 320px;
+    }
+  }
+  main {
+    margin: 125px 0;
+    gap: 125px;
+    #history #history_text_block .text_part {
+      padding: 35px 35px 0 35px;
+    }
+    #map #map_content #map_text_block .text_part {
+      margin: 35px;
+    }
+    #each_dormitory {
+      margin: 0 35px;
+      #each_dormitory_content #list_of_info_about_each_dormitory .unit_in_list_of_info_about_each_dormitory {
+        gap: 20px;
+      }
+    }
+    .title_and_text_block {
+      margin: 0 35px;
+      padding-left: 26.25px;
+      #list_of_info_to_check_in {
+        padding-left: 16px;
+      }
+    }
+  }
+  h2 {
+    font-size: 24px;
+  }
+  .text {
+    font-size: 19px;
+  }
+}
+
+@media (max-width: 400px) {
+  header {
+    h1 {
+      font-size: 32.5px;
+    }
+    img {
+      width: 290px;
+    }
+  }
+}
+
+@media (max-width: 350px) {
+  header {
+    h1 {
+      font-size: 30px;
+    }
+    img {
+      width: 260px;
+    }
+  }
+  main {
+    margin: 120px 0;
+    gap: 120px;
+    #history #history_text_block .text_part {
+      padding: 30px 30px 0 30px;
+    }
+    #map #map_content #map_text_block .text_part {
+      margin: 30px;
+    }
+    #each_dormitory {
+      margin: 0 30px;
+    }
+    .title_and_text_block {
+      margin: 0 30px;
+      padding-left: 22.5px;
+      #list_of_info_to_check_in {
+        padding-left: 15px;
+      }
+    }
+  }
+  h2 {
+    font-size: 22px;
+  }
+  .text {
+    font-size: 18px;
+  }
+}
